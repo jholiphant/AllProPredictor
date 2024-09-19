@@ -24,4 +24,7 @@ graph TD;
     allpro21-->Allpros;
     allpro22-->Allpros;
     allpro23-->Allpros;
+    Allpros-->yearly_player_data: left join
 ```
+
+
