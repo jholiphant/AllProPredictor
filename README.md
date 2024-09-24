@@ -57,8 +57,8 @@ quarterbacks = merged.loc[qb]
 
 ```mermaid
 graph TD;
-    yearly_player_data-->Quarterbacks:
-    yearly_player_data-->Runningbacks:
+    yearly_player_data-->Quarterbacks;
+    yearly_player_data-->Runningbacks;
     yearly_player_data-->Wide Receivers;
 :
 ```
