@@ -30,9 +30,37 @@ graph TD;
 The above diagram depicts our source to target architecture flow that we need to achieve before we can begin modeling. First, we append each of the 12 All Pro lists to one another using Python's .concat() function, giving us the Allpros dataframe. Once that is acheived, we perform a left join on the two datasets by matching the player name and year in both and attaching 1 if the player made the All Pro team that year and a 0 if not: 
 
 allpros = allpros.assign(All_Pro = 1)
+
 merged = careerstats.merge(allpros, left_on=['player_name', 'season'], right_on=['Player', 'Year'], how='left')
 
 After this and a few other data cleaning exercises, we are now ready for some analysis.
 
 **Data Partitioning**
+
+Before creating our logistic regression models, we need to partition our data into 3 separate dataframes, one for QB's, one for WR's, and one for RB's since each position have different relevant statistics for us to leverage.
+
+rec = merged['position'].values == 'WR'
+receivers = merged.loc[rec]
+
+rb = merged['position'].values == 'RB'
+rbacks = merged.loc[rb]
+
+qb = merged['position'].values == 'QB'
+quarterbacks = merged.loc[qb]rec = merged['position'].values == 'WR'
+receivers = merged.loc[rec]
+
+rb = merged['position'].values == 'RB'
+rbacks = merged.loc[rb]
+
+qb = merged['position'].values == 'QB'
+quarterbacks = merged.loc[qb]
+
+```mermaid
+graph TD;
+    yearly_player_data-->Quarterbacks;
+    yearly_player_data-->Runningbacks;
+    yearly_player_data-->Wide Receivers;
+:
+```
+
 
