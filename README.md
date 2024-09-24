@@ -46,21 +46,5 @@ rb = merged['position'].values == 'RB'
 rbacks = merged.loc[rb]
 
 qb = merged['position'].values == 'QB'
-quarterbacks = merged.loc[qb]rec = merged['position'].values == 'WR'
-receivers = merged.loc[rec]
-
-rb = merged['position'].values == 'RB'
-rbacks = merged.loc[rb]
-
-qb = merged['position'].values == 'QB'
 quarterbacks = merged.loc[qb]
-
-```mermaid
-graph TD;
-    yearly_player_data-->Quarterbacks;
-    yearly_player_data-->Runningbacks;
-    yearly_player_data-->Wide Receivers;
-:
-```
-
 
