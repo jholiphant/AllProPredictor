@@ -103,14 +103,17 @@ qb_y_predict = qblog.predict(qb_x_test)
 Now it's time to grade our models, and there are a few different ways we are going to do this:
 
 Classification Report: report displaying 3 scores - Precision, Recall, F1
+
     - Precision tells us what percentage of our predictions were correct
     - Recall tells us what percentage of positive cases (All-Pro selections) were caught by the model
     - F1 Score tells us what percentage of positive predictions were correct
 
 AUC Curve & Score: the curve tells us how sensitive our model is to each cutoff value, and the score given to us shows how well our model classifies All-Pro vs not All-Pro outcomes
+
     - Score ranges from 0.5 to 1, the greater the better
 
 Feature Importance Table: tells us how well each selected feature is doing at predicting outcomes
+
     - Coefficients represent the change in the log odds for a one-unit change in the predictor variable, the futher from zero the better
     - Odds Ratios compare the odds of an event for two groups defined by a specific variable, so an odds ratio of greater than 1 signifies a significant mover of odds for a feature
 
